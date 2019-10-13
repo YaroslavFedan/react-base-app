@@ -1,0 +1,65 @@
+
+@import '~styles/variables';
+
+
+
+.auth {
+    display: flex;
+    height: 100%;
+    letter-spacing: .1px;
+
+    .auth__content {
+        margin: auto;
+    }
+
+    &__top {
+        text-align: center;
+        margin-bottom: 50px;
+
+        h2 {
+            font-size: 28px;
+            margin-bottom: 5px;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 21px;
+            opacity: .5;
+        }
+    }
+
+    &__register-link {
+        display: block;
+        text-align: center;
+        color: $light;
+        font-size: 16px;
+    }
+
+    &__success-block {
+        height: 400px;
+        display: flex;
+    }
+    &__success-info{
+        margin: auto;
+        text-align: center;
+        color:$primary;
+        h2{
+            margin-top: 20px;
+        }
+        p {
+            
+            color: $light;
+        }
+    }
+    button {
+        width: 100%;
+        font-size: 14px;
+        text-transform: uppercase;
+        font-weight: 500;
+    }
+
+    .block {
+        width: 430px;
+    }
+
+}
