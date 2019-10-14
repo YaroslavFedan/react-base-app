@@ -1,10 +1,10 @@
 
 import React from 'react';
 import { Icon } from 'antd';
-import { WhiteBlockWithShadow } from '../../../components'
+import { WhiteBlockWithShadow } from 'components'
 
 
-const RegisterForm = () => {
+const RegisterSuccess = () => {
     return (
         <>
             <div className="auth__top">
@@ -26,4 +26,4 @@ const RegisterForm = () => {
     );
 }
 
-export default RegisterForm;
+export default RegisterSuccess;

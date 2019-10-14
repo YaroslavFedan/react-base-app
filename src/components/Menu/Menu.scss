@@ -1,0 +1,8 @@
+.ant-menu{
+    line-height: 0 !important;
+    display: flex;
+    flex-direction: row-reverse;
+    &-item{
+        padding: 10px 20px 16px !important;
+    }
+}

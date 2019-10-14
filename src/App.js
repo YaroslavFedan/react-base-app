@@ -1,18 +1,23 @@
 import React from 'react';
-import { Route } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 
 
-import { Auth, Home } from "./pages";
+import { Main, Auth, Home, Error404 } from "./pages";
 
 class App extends React.Component{
   
   render() {
     
     return (
-        <div className="wrapper"> 
-          <Route exact path={['/','/login','/register']} component={Auth} />
+      <div className="wrapper"> 
+      
+       <Switch>
+          <Route exact path='/' component={Main} />
+          <Route exact path={['/sign-in','/sign-up']} component={Auth} />
           <Route exact path='/im' component={Home} />
-        </div>
+          <Route path='*' exact={true} component={Error404} />
+        </Switch>
+      </div> 
     );
   }
 
