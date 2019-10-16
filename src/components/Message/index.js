@@ -8,29 +8,42 @@ import noreadedSVG from '../../assets/img/noreaded.svg'
 
 import './Message.scss';
 
-const Message = ({ avatar, text, date, user, ...props }) => {
+const Message = (props) => {
+    const { avatar, text, date, attachments, user, isMain, isReaded, className } = props;
 
     return (
-        <div className={classNames('message', props.className, { 'message--isMain': props.isMain })} >
+        <div className={classNames('message', className, { 'message--isMain': isMain })} >
 
             <div className="message__avatar ">
                 <img src={avatar} alt={`avatar ${user.fullname}`} />
             </div>
 
-            <div className="message__content  ">
-                <div className="message__bubble ">
-                    <p className="message__text "> {text} </p>
+
+            <div className="message__content  demo">
+                {text &&
+                    <div className="message__bubble demo">
+                        <p className="message__text demo"> {text} </p>
+                    </div>
+                }
+                <div className="message__attachments">
+                    {attachments && attachments.map((item, index) => {
+                        return (
+                            <div key={index} className="message__attachments--item">
+                                <img src={item.url} alt={item.filename} />
+                            </div>
+                        );
+                    })}
                 </div>
             </div>
 
             {
-                props.isMain ?
-                    <div className={classNames("message__info", { 'message__info--readed': props.isReaded })}>
+                isMain ?
+                    <div className={classNames("message__info demo", { 'message__info--readed': isReaded })}>
                         <img src={props.isReaded ? readedSVG : noreadedSVG} alt="readed icon" />
                     </div> : null
             }
 
-            <div className="message__date ">{distanceInWordsToNow(new Date(date), { addSuffix: true, locale: ruLocale })}</div>
+            <div className="message__date demo">{distanceInWordsToNow(new Date(date), { addSuffix: true, locale: ruLocale })}</div>
 
         </div>
     );
@@ -47,6 +60,7 @@ Message.propTypes = {
     text: PropTypes.string,
     date: PropTypes.string,
     user: PropTypes.object,
+    attachments: PropTypes.array,
 };
 
 export default Message;
