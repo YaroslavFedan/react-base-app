@@ -1,1 +1,21 @@
 @import '~styles/variables';
+
+.home{
+   display: flex;
+   flex-direction: row;
+   justify-content: flex-start;
+   align-items: stretch;
+   min-height: 100vh;
+   &__item{
+       min-width: 50px;
+       height: auto;
+       padding: 30px 15px;
+       &--dialog{
+           width: 35%;
+       }
+       &--messages{
+           flex: auto;
+       }
+   }
+
+}
