@@ -1,13 +1,12 @@
 import React from 'react';
 import PropTypes from "prop-types";
 import classNames from "classnames";
-import distanceInWordsToNow from 'date-fns/formatDistanceToNow';
-import ruLocale from 'date-fns/locale/ru';
-import readedSVG from 'assets/img/readed.svg'
-import noreadedSVG from 'assets/img/noreaded.svg'
+
+import { Avatar , DistanceTime, ReadedIcon} from 'components';
+
 
 import './Message.scss';
-import { Avatar } from 'components';
+
 
 const Message = ({
     avatar,
@@ -55,14 +54,14 @@ const Message = ({
 
 
             {
-                isMy ?
-                    <div className={classNames("message__info demo", { 'message__info--readed': isReaded })}>
-                        <img src={isReaded ? readedSVG : noreadedSVG} alt="readed icon" />
-                    </div> : null
+                isMy ? <ReadedIcon 
+                            className={classNames("message__info demo", { 'message__info--readed': isReaded })}
+                            readed={isReaded} />
+                    : null
             }
 
 
-            <div className="message__date demo">{date && distanceInWordsToNow(new Date(date), { addSuffix: true, locale: ruLocale })}</div>
+            <div className="message__date demo"><DistanceTime date={date}/></div>
 
         </div>
     );

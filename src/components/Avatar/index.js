@@ -7,6 +7,12 @@ const Avatar = ({
     className,
     alt
 }) => {
+
+    if(!src){
+        //make avatar from alt
+        src = null;
+    }
+
     return (
         <div className={classNames("avatar", className)}>
             <img src={src} alt={alt} />

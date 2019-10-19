@@ -103,7 +103,6 @@ class MessagesContainer extends React.Component {
                             },
                         ]}
                     isMy
-                    isReaded
                 />
 
                 <Message
