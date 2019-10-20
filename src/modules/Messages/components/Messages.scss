@@ -3,171 +3,171 @@
 
 .message {
 
+  display: flex;
+  align-items: flex-end;  //?
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+  padding: 0 15px;
+
+  &__avatar {
+
+    padding-right: 13px;
+
+    img {
+      width: 33px;
+      height: 33px;
+      border-radius: 50px;
+    }
+  }
+
+  &__content {
+    max-width: 60%;
+  }
+
+  &__bubble {
+    background: $bubble;
+    box-shadow: 0 5px 5px $blue_shadow;
+    border-radius: 12px 12px 12px 0;
+    padding: 17px;
+    width: fit-content;
+    &--is-typing{
+      background: $light_blue;
+      box-shadow: 0 5px 5px $light_shadow;
+    }
+  }
+
+  &__text {
+    color: $white;
+    line-height: 20px;
+    margin: 0;
+
+    p {
+      margin: 0;
+    }
+  }
+
+  &__attachments {
     display: flex;
-    align-items: flex-end;  //?
-    margin-bottom: 15px;
-    flex-wrap: wrap;
-    padding: 0 15px;
-
-    &__avatar {
-
-        padding-right: 13px;
-
-        img {
-            width: 33px;
-            height: 33px;
-            border-radius: 50px;
-        }
-    }
-
-    &__content {
-        max-width: 60%;
-    }
-
-    &__bubble {
-        background: $bubble;
-        box-shadow: 0 5px 5px $blue_shadow;
-        border-radius: 12px 12px 12px 0;
-        padding: 17px;
-        width: fit-content;
-        &--is-typing{
-            background: $light_blue;
-            box-shadow: 0 5px 5px $light_shadow;
-        }
-    }
-
-    &__text {
-        color: $white;
-        line-height: 20px;
-        margin: 0;
-
-        p {
-            margin: 0;
-        }
-    }
-
-    &__attachments {
-        display: flex;
-        width: 100%;
-        margin-bottom: 5px;
-        $self: &;
-        &--item {
-            width: 45px;
-            height: 45px;
-            margin-right: 5px;
-            img {
-                width: 100%;
-                height: auto;
-                border-radius: 8px;
-                cursor: pointer;
-            }
-        }
-        &--one{
-            #{$self}--item{
-                width: 150px;
-                height: 150px;
-            }
-        }
-        
-    }
-
-    &__date {
-        opacity: .5;
-        font-size: 12px;
-        width: 100%;
-        margin-top: 10px;
-        padding-left: 45px;
-    }
-
-    /*** is My ***/
+    width: 100%;
+    margin-bottom: 5px;
     $self: &;
+    &--item {
+      width: 45px;
+      height: 45px;
+      margin-right: 5px;
+      img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+    }
+    &--one{
+      #{$self}--item{
+        width: 150px;
+        height: 150px;
+      }
+    }
 
-    &--isMy {
+  }
 
-        flex-direction: row-reverse;
+  &__date {
+    opacity: .5;
+    font-size: 12px;
+    width: 100%;
+    margin-top: 10px;
+    padding-left: 45px;
+  }
 
-        #{$self}__avatar {
-            padding-right: 0;
-            padding-left: 13px;
-        }
+  /*** is My ***/
+  $self: &;
 
-        #{$self}__info {
-            margin-right: 15px;
+  &--isMy {
 
-        }
+    flex-direction: row-reverse;
 
-        #{$self}__info--readed {
-            margin-right: 10px;
-        }
+    #{$self}__avatar {
+      padding-right: 0;
+      padding-left: 13px;
+    }
 
-        #{$self}__bubble {
-            border-radius: 12px 12px 0 12px;
-            border: 1px solid rgba($black, .2);
-            background: $white;
-            box-shadow: 0px 4px 4px rgba($white, 0.0220444);
-        }
-
-        #{$self}__text {
-            color: $black;
-        }
-
-        #{$self}__attachments {
-            flex-direction: row-reverse;
-            margin-left: 0;
-
-            &--item {
-                margin-right: 0;
-                margin-left: 5px;
-            }
-        }
-
-        #{$self}__date {
-            text-align: right;
-            padding-right: 45px;
-        }
+    #{$self}__info {
+      margin-right: 15px;
 
     }
 
-    /*** typing ***/
-    &__typing {
-        
-        will-change: transform;
-        width: auto;
-
-        display: inline-block;
-        margin: 0 auto;
-        position: relative;
-        animation: 2s bulge infinite ease-out;
-
-        span {
-            height: 15px;
-            width: 15px;
-            float: left;
-            margin: 0 5px;
-            background-color: $typing-bubble;
-            display: block;
-            border-radius: 50%;
-            opacity: 0.4;
-
-            @for $i from 1 through 3 {
-                &:nth-of-type(#{$i}) {
-                    animation: 1s blink infinite ($i * .3333s);
-                }
-            }
-        }
+    #{$self}__info--readed {
+      margin-right: 10px;
     }
 
-    @keyframes blink {
-        50% {
-          opacity: 1;
-        }
+    #{$self}__bubble {
+      border-radius: 12px 12px 0 12px;
+      border: 1px solid rgba($black, .2);
+      background: $white;
+      box-shadow: 0px 4px 4px rgba($white, 0.0220444);
     }
-      
-    @keyframes bulge {
-        50% {
-            transform: scale(1.05);
-        }
+
+    #{$self}__text {
+      color: $black;
     }
+
+    #{$self}__attachments {
+      flex-direction: row-reverse;
+      margin-left: 0;
+
+      &--item {
+        margin-right: 0;
+        margin-left: 5px;
+      }
+    }
+
+    #{$self}__date {
+      text-align: right;
+      padding-right: 45px;
+    }
+
+  }
+
+  /*** typing ***/
+  &__typing {
+
+    will-change: transform;
+    width: auto;
+
+    display: inline-block;
+    margin: 0 auto;
+    position: relative;
+    animation: 2s bulge infinite ease-out;
+
+    span {
+      height: 15px;
+      width: 15px;
+      float: left;
+      margin: 0 5px;
+      background-color: $typing-bubble;
+      display: block;
+      border-radius: 50%;
+      opacity: 0.4;
+
+      @for $i from 1 through 3 {
+        &:nth-of-type(#{$i}) {
+          animation: 1s blink infinite ($i * .3333s);
+        }
+      }
+    }
+  }
+
+  @keyframes blink {
+    50% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes bulge {
+    50% {
+      transform: scale(1.05);
+    }
+  }
 }
 
 
