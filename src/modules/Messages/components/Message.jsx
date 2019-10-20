@@ -51,8 +51,6 @@ const Message = ({
 
             </div>
 
-
-
             {
                 isMy ? <ReadedIcon 
                             className={classNames("message__info ", { 'message__info--readed': isReaded })}
@@ -60,9 +58,8 @@ const Message = ({
                     : null
             }
 
-
             <div className="message__date "><DistanceTime date={date}/></div>
-
+            
         </div>
     );
 }
