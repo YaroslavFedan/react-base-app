@@ -7,4 +7,5 @@ export { default as Avatar } from './Avatar';
 export { default as DistanceTime } from './DistanceTime';
 export { default as ReadedIcon } from './ReadedIcon';
 export { default as DialogItem } from './DialogItem';
+export { default as Message } from './Message';
 
