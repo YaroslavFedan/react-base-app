@@ -18,14 +18,9 @@ class Home extends React.Component {
                 <div className="home__item home__item--messages demo">
                     <Messages />
                 </div>
-
-            
-            
-
             </section>
         );
     }
-
 }
 
 

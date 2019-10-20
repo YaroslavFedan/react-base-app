@@ -24,7 +24,7 @@ const Message = ({
 
             <Avatar className="message__avatar" src={avatar} alt={`avatar ${user.fullname}`} />
            
-            <div className="message__content  demo">
+            <div className="message__content  ">
                 {attachments &&
                     <div className={classNames("message__attachments", {"message__attachments--one":attachments.length === 1})}>
                         {attachments.map((item, index) => {
@@ -39,7 +39,7 @@ const Message = ({
                 
                 { (text || isTyping) && 
                     <div className={ classNames("message__bubble",{"message__bubble--is-typing":isTyping}) }>
-                        {text && <p className="message__text demo"> {text} </p>}
+                        {text && <p className="message__text "> {text} </p>}
                         {isTyping && <div className="message__typing">
                             <span></span>
                             <span></span>
@@ -55,13 +55,13 @@ const Message = ({
 
             {
                 isMy ? <ReadedIcon 
-                            className={classNames("message__info demo", { 'message__info--readed': isReaded })}
+                            className={classNames("message__info ", { 'message__info--readed': isReaded })}
                             readed={isReaded} />
                     : null
             }
 
 
-            <div className="message__date demo"><DistanceTime date={date}/></div>
+            <div className="message__date "><DistanceTime date={date}/></div>
 
         </div>
     );

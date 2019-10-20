@@ -1,15 +1,4 @@
-import React from 'react';
-import PropTypes from "prop-types";
-import { Avatar, DistanceTime, ReadedIcon } from 'components';
-
-
-import { Badge } from 'antd';
-
-
-const DialogItem = ({items}) => {
-
-    return (
-        < ul className="dialogs">
+< ul className="dialogs">
             {items.map((item, key) => {
                 
                 let { date, text, user, newMessage, isReaded } = item;
@@ -63,23 +52,3 @@ const DialogItem = ({items}) => {
 
             })}
         </ul>
-
-
-    );
-}
-
-DialogItem.defaultProps = {
-    user: {}
-}
-
-DialogItem.propTypes = {
-    avatar: PropTypes.string,
-    date: PropTypes.string,
-    text: PropTypes.string,
-    user: PropTypes.object,
-    newMessage: PropTypes.number,
-    isReaded: PropTypes.bool,
-
-};
-
-export default DialogItem;
