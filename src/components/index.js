@@ -1,4 +1,6 @@
 
+export { default as RegisterForm } from './RegisterForm';
+export { default as RegisterSuccess } from './RegisterSuccess';
 export { default as Button } from './Button';
 export { default as WhiteBlockWithShadow } from './WhiteBlockWithShadow';
 export { default as FormField } from './FormField';
